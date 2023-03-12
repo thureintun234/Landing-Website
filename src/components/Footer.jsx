@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Footer.module.css';
 import { AiOutlineMail } from 'react-icons/ai';
 import logo1 from '../assets/footer/footer1.png';
@@ -6,11 +6,53 @@ import logo2 from '../assets/footer/footer2.png';
 import logo3 from '../assets/footer/footer3.png';
 import logo4 from '../assets/footer/footer4.png';
 import logo5 from '../assets/footer/footer5.png';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const characterAnimation = {
+  hidden: {
+    opacity: 0,
+    y: '3em',
+  },
+  visible: {
+    opacity: 1,
+    y: '0em',
+    transition: {
+      duration: 1.5,
+      ease: [0.2, 0.65, 0.3, 0.9],
+    },
+  },
+};
 
 const Footer = () => {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start('visible');
+    } else {
+      control.start('hidden');
+    }
+  }, [control, inView]);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.footer__container}>
+    <motion.div
+      className={styles.container}
+      ref={ref}
+      aria-hidden='true'
+      initial='hidden'
+      animate={control}
+      variants={characterAnimation}
+    >
+      <motion.div
+        className={styles.footer__container}
+        ref={ref}
+        aria-hidden='true'
+        initial='hidden'
+        animate={control}
+        variants={characterAnimation}
+      >
         <div>
           <p style={{ fontSize: '20px' }}>QUICK LINKS</p>
           <ul className={styles.footer__list}>
@@ -68,7 +110,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </motion.div>
 
       <div className={styles.footer__logos}>
         <div>
@@ -85,7 +127,7 @@ const Footer = () => {
           <button className={styles.footer__button}>SUBMIT</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
