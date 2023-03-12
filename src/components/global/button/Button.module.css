@@ -1,0 +1,9 @@
+.button {
+  color: white;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  padding: 1rem;
+  border: 1px solid var(--gray-color);
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}

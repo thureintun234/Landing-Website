@@ -1,0 +1,75 @@
+/* ================== first navbar  ==================== */
+.nav__main {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--gray-color);
+  padding: 4px;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav__list li {
+  margin-left: 1.8rem;
+}
+
+.nav__list li svg {
+  color: var(--primary-color);
+}
+
+.nav__list li button,
+.nav__list li button svg {
+  background-color: var(--green-color);
+  color: white;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.nav__list li button {
+  padding: 6px;
+}
+
+.nav__list li select {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  outline: none;
+  padding: 0.1rem 0.8rem 0.1rem 0.8rem;
+}
+
+/* ====================== second navbar ====================== */
+.second__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 16%;
+  align-items: center;
+  padding: 4px;
+}
+
+.second__nav li {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.second__nav li:hover {
+  color: var(--primary-color);
+}
+
+.search {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.search svg {
+  margin-right: 1rem;
+}
+
+.search input {
+  padding: 0.2rem 1rem;
+  border: 1px solid gray;
+}

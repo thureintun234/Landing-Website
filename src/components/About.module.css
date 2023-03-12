@@ -1,0 +1,22 @@
+.about__container {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.about__text {
+  width: 34%;
+  text-align: justify;
+  line-height: 24px;
+}
+
+.about__img {
+  width: 30%;
+}
+
+.about__img img {
+  width: 300px;
+  width: 300px;
+}
